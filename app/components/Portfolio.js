@@ -1,44 +1,83 @@
+import Link from "next/link";
+
 export default function Portfolio() {
-  const projects = [1, 2, 3, 4, 5, 6]; // Placeholderlar
+  const projects = [
+    {
+      id: 1,
+      projectName: "Html and CSS Project",
+      link: "https://asadbek-demo-day.netlify.app/",
+      bgImg: "./tennis.png",
+      technologies: ["React", "TailwindCSS"],
+    },
+    {
+      id: 2,
+      projectName: "Leaflet Project",
+      link: "https://aaa-leaflet.netlify.app/",
+      bgImg: "./leaflet.png",
+      technologies: ["React", "TailwindCSS", "Leaflet"],
+    },
+    {
+      id: 3,
+      projectName: "React Project",
+      link: "https://mynewproject909.netlify.app/",
+      bgImg: "./image.png",
+      technologies: ["React", "TailwindCSS"],
+    },
+    {
+      id: 4,
+      projectName: "API Project",
+      link: "https://salam-project-ruzandy.vercel.app/",
+      bgImg: "./salam.png",
+      technologies: ["React", "TailwindCSS", "API KEY"],
+    },
+    {
+      id: 5,
+      projectName: "LUCIDE React  Project",
+      link: "https://loopstudiios-landing-page.netlify.app/",
+      bgImg: "./vr.png",
+      technologies: ["React", "TailwindCSS"],
+    },
+    {
+      id: 6,
+      projectName: "STORE Project",
+      link: "https://comfy-store-gw72.netlify.app/",
+      bgImg: "./comfy.png",
+      technologies: ["React", "TailwindCSS"],
+    },
+  ]; // Oddiy sonlar massivi
 
   return (
-    <section className="relative">
-      {/* Yuqori qism - Fon rasmi bilan */}
-      <div className="h-64 bg-cover bg-center flex items-center justify-center relative" 
-           style={{ backgroundImage: "url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=2070')" }}>
-        <div className="absolute inset-0 bg-black/40"></div>
-        <h2 className="relative z-10 text-2xl font-black border-[5px] border-black bg-[#E5E5E5]/80 px-12 py-3 uppercase tracking-[0.3em]">
-          Portfolio
-        </h2>
-      </div>
-
-      {/* Filter Menu */}
-      <div className="bg-[#1A1A1A] py-4 flex justify-center gap-8 text-[10px] font-bold text-white uppercase tracking-widest">
-        <button className="border-b border-white pb-1">All</button>
-        <button className="opacity-50 hover:opacity-100 transition">Coded</button>
-        <button className="opacity-50 hover:opacity-100 transition">Designed</button>
-      </div>
-
+    <section className="relative bg-black text-white">
       {/* Galereya Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-3">
-        {projects.map((p) => (
-          <div key={p} className="relative aspect-video group overflow-hidden bg-gray-800">
-            <img 
-              src={`https://picsum.photos/seed/${p+10}/600/400`} 
-              className="w-full h-full object-cover  group-hover:grayscale-0 group-hover:scale-110 transition-all duration-500" 
-              alt="Project"
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-10">
+        {projects.map((project) => (
+          <div
+            key={project}
+            className="group relative overflow-hidden rounded-xl bg-gray-900"
+          >
+            <img
+              src={project.bgImg}
+              alt="Work"
+              className="w-full h-64 object-cover transition duration-500 group-hover:scale-110"
             />
-            <div className="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center text-white p-6 text-center">
-              <h4 className="font-bold uppercase tracking-widest mb-2">Project Name</h4>
-              <p className="text-[10px] mb-4">coded, designed</p>
-              <button className="border-2 border-white px-6 py-1 text-[10px] font-bold">MORE</button>
+
+            <div className="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-center items-center p-4">
+              <h4 className="font-bold uppercase tracking-widest mb-2 text-white">
+                {project.projectName}
+              </h4>
+              <div className="flex gap-4">
+                {project.technologies.map((item) => (
+                  <p className="text-[10px] mb-4 text-gray-300">{item}</p>
+                ))}
+              </div>
+              <Link href={`${project.link}`}>
+                <button className="border-2 border-white px-6 py-1 text-[10px] font-bold hover:bg-white hover:text-black transition">
+                  MORE
+                </button>
+              </Link>
             </div>
           </div>
         ))}
-      </div>
-      
-      <div className="bg-[#1A1A1A] py-6 text-center">
-        <p className="text-white text-[10px] font-bold tracking-widest uppercase">And many more to come!</p>
       </div>
     </section>
   );

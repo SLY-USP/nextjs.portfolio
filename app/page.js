@@ -1,10 +1,11 @@
 "use client";
-import { Mail, Github, Linkedin } from "lucide-react";
+import { Mail, Github, Instagram, Send } from "lucide-react";
 import Skills from "./components/Skills";
 import AboutMe from "./components/AboutMe";
 import Portfolio from "./components/Portfolio";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import Link from "next/link";
 export default function Home() {
   return (
     <main className="min-h-screen bg-[#E5E5E5] overflow-x-hidden font-sans">
@@ -33,23 +34,29 @@ export default function Home() {
             {/* IKONKALAR - To'g'rilangan joylashuv */}
             <div className="flex gap-4 mt-12">
               <a
-                href="#"
+                href="https://asadbekzizjonov01@gmail.com"
                 className="bg-[#D1D1D1] p-3 shadow-md hover:bg-black hover:text-white transition-all duration-300 text-black"
               >
                 <Mail size={24} strokeWidth={2.5} />
               </a>
-              <a
-                href="#"
-                className="bg-[#D1D1D1] p-3 shadow-md hover:bg-black hover:text-white transition-all duration-300 text-black"
-              >
+              <Link  href="https://github.com/SLY-USP"
+               className="bg-[#D1D1D1] p-3 shadow-md hover:bg-black hover:text-white transition-all duration-300 text-black">
+                
+                
+              
                 <Github size={24} strokeWidth={2.5} />
-              </a>
-              <a
-                href="#"
+              </Link>
+              
+              <Link
+                href="https://t.me/Jasur6007"
                 className="bg-[#D1D1D1] p-3 shadow-md hover:bg-black hover:text-white transition-all duration-300 text-black"
               >
-                <Linkedin size={24} strokeWidth={2.5} />
-              </a>
+                <Send size={24} strokeWidth={2.5} />
+              </Link>
+              <Link href="https://www.instagram.com/azizjonov_909?igsh=OXB6Y3FnZmlxeTRz"
+              className="bg-[#D1D1D1] p-3 shadow-md hover:bg-black hover:text-white transition-all duration-300 text-black">
+              <Instagram />
+              </Link>
             </div>
           </div>
         </div>
@@ -64,22 +71,7 @@ export default function Home() {
           <div className="relative h-full w-full flex flex-col items-center justify-end overflow-hidden">
             {/* Navigatsiya */}
             <nav className="absolute top-10 right-10 z-30 flex items-center gap-8 text-gray-600 text-[11px] font-bold uppercase tracking-widest">
-              <button
-                onClick={() =>
-                  window.open("https://mynewproject909.netlify.app", "_blank")
-                }
-                className="bg-white text-black px-6 py-2 rounded-full hover:opacity-80 transition"
-              >
-                UY Proyekt
-              </button>
-              <button
-                onClick={() =>
-                  window.open("https://asadbek-demo-day.netlify.app/", "_blank")
-                }
-                className="bg-white text-black px-6 py-2 rounded-full hover:opacity-80 transition"
-              >
-                Proyektni ko'rish
-              </button>
+              
             </nav>
 
             {/* RASMNI OQ-QORA QILISH VA TO'G'RI JOYLASHTIRISH */}
