@@ -19,7 +19,6 @@ export default function Contact() {
   const handleSubmit = async (e) => {
   e.preventDefault();
 
-  // Markdown belgilarsiz oddiy matn
   const text = "Yangi xabar!\n\n" + 
                "Ism: " + formData.name + "\n" +
                "Email: " + formData.email + "\n" +
@@ -31,9 +30,8 @@ export default function Contact() {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        chat_id: "7561832483", // Sizning shaxsiy ID raqamingiz
+        chat_id: "7561832483", 
         text: text
-        // parse_mode qatorini o'chirib tashladik (xatolik bermasligi uchun)
       })
     });
 
